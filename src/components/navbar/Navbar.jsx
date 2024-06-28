@@ -30,9 +30,7 @@ export default function Navbar() {
 //  const result = Avatar.getInitials();
 //  console.log(result);
 // service.getAvtar();
-const  urli =localStorage.getItem('avatar');
-console.log(urli);
-  
+
 
  
   const navigate=useNavigate();
@@ -42,7 +40,7 @@ console.log(urli);
   const[checkLogin,setCheckLogin] = useState(false);
 
   const user=JSON.parse(localStorage.getItem('user'));
-  const url=(localStorage.getItem('avatar'));
+  const url=(localStorage.getItem('ImageURL'));
   // console.log(url);
 
   useEffect(()=>{
@@ -66,7 +64,7 @@ console.log(urli);
 
 
     
-
+   
 
 
 
@@ -93,9 +91,9 @@ console.log(urli);
 
   return (
    < >
-   
+        {/* Login   = True */}
    {checkLogin === true ? (
-           <Disclosure as="nav" className=" bg-gray-100 sticky  top-0 ">
+           <Disclosure as="nav" className=" bg-gray-100 sticky  top-0 z-50 ">
            {({ open }) => (
              <>
                <div className=" mx-auto  px-2 sm:px-6 lg:px-8">
@@ -117,25 +115,14 @@ console.log(urli);
                      <Link to="/" className="flex items-center">
                              <img
                                  src={logo3}
-                                 className="mr-40 mt-1  h-12 sm:mr-0 "
+                                 className="mr-40  scale-110 hover:scale-125 duration-700 h-16 sm:mr-0  "
                                  alt="Logo"
                              />
                          </Link>
                          <div className="flex md:order-2">
-                           <SearchBar/>
-        
-         
+                           <SearchBar/>       
          </div>
-     
                      </div>
-     
-     
-                   
-     
-     
-     
-     
-     
                      <div className="hidden sm:ml-6 sm:block sm:mt-[8px]">
                        <div className="flex space-x-4">
                          {navigation.map((item) => (
@@ -153,22 +140,7 @@ console.log(urli);
                          ))}
                        </div>
                      </div>
-     
-     
-     
-                   </div>
-     
-     
-                  
-     
-     
-     
-     
-     
-     
-     
-     
-                   
+                   </div>   
                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 gap-2 sm:pr-0">
                              {/* <Link
                                  to="/login"
@@ -206,8 +178,8 @@ console.log(urli);
                            <span className="sr-only">Open user menu</span>
                            <img
                              className="h-8 w-8 rounded-full"
-                            //  src={url}
-                            src ="https://norrismgmt.com/wp-content/uploads/2020/05/24-248253_user-profile-default-image-png-clipart-png-download.png"
+                             src={url}
+                           
                              alt=""
                            />
                          </Menu.Button>
@@ -295,6 +267,11 @@ console.log(urli);
              </>
            )}
          </Disclosure>
+
+
+
+              //  Not Login 
+
    ):(<Disclosure as="nav" className="bg-gray-100 sticky top-0  z-10">
    {({ open }) => (
      <>

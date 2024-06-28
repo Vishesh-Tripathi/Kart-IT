@@ -1,5 +1,8 @@
 import { useState ,useEffect} from "react";
 import Layout from "../../components/layout/Layout";
+import { database, storage } from "../../appwrite/Confgi";
+import conf from "../../conf/conf";
+import Avatar from "../../components/Avatar/Avatar";
 const products = [
     {
         id: 1,
@@ -16,22 +19,29 @@ const products = [
 
 const UserDashboard = () => {
     const[name,setName]= useState("Please Login")
+    const [ide,setIde] = useState("");
     const[email,setEmail]= useState("Please Login")
+    // const [url,setUrl] = useState();
     const user=JSON.parse(localStorage.getItem('user'));
-    // const url=(localStorage.getItem('avatar'));
-    const url = "https://norrismgmt.com/wp-content/uploads/2020/05/24-248253_user-profile-default-image-png-clipart-png-download.png";
-  console.log(url);
+    const url=(localStorage.getItem('ImageURL'));
+    // console.log(url);
     
     useEffect(()=>{
         if(user){
             setName(user.name)
             setEmail(user.email)
+
         }
         // console.log(user)
       },[user])
 
+
+
+
+     
     return (
         <Layout>
+          
             <div className=" container mx-auto px-4 py-5 lg:py-8">
                 {/* Top  */}
                 <div className="top ">
@@ -48,7 +58,7 @@ const UserDashboard = () => {
                         </div>
                     </div>
                 </div>
-
+                <Avatar />
                 {/* bottom  */}
                 <div className="bottom">
                     {/* main 1 */}

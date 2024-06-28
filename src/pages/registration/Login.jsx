@@ -38,10 +38,10 @@ const Login = () => {
           setLoading(false);
           toast.success("Login succesfully")
           if(data2.labels[0]=="admin"){
-              navigate('/admin-dashboard')
+              navigate('/')
           }
           else{
-               navigate('/user-dashboard');
+               navigate('/');
           }
       }
       else{

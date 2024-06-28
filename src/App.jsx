@@ -15,6 +15,7 @@ import UpdateProductPage from './components/admin/UpdateProductPage'
 import MyState from './context/MyState'
 import Toast,{Toaster} from 'react-hot-toast'
 import Avatar from './components/Avatar/Avatar'
+import CategoryPage from './pages/category/CategoryPage'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/allproduct" element={<AllProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/category/:categoryname" element={<CategoryPage/>} />
         <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/addproduct" element={<AddProductPage/>} />

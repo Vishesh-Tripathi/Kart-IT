@@ -59,11 +59,13 @@ const HeroSlide =[
     title2: "Headphone",
     discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus beatae consequuntur a mollitia qui totam?",
   },
+  
 
 ]
 
 function HeroSection() {
  const settings ={
+  slidesToShow:1,
   dots: false,
   arrows : true,
   infinite: true,
