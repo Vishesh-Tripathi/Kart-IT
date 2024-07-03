@@ -4,6 +4,7 @@ const conf={
     appwriteDBid:String(import.meta.env.VITE_APPWRITE_DATABASE_ID),
     appwritecollectionid:String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
     appwritecollectionid2:String(import.meta.env.VITE_APPWRITE_COLLECTION_ID2),
-    appwritebucketid:String(import.meta.env.VITE_BUCKET_COLLECTION_ID)
+    appwritebucketid:String(import.meta.env.VITE_BUCKET_COLLECTION_ID),
+    appwritecollectionidorder:String(import.meta.env.VITE_APPWRITE_COLLECTION_ID_ORDER)
 }
 export default conf;
